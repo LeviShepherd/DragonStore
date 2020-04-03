@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert New Dragon</title>
+</head>
+<body>
+<form th:object="${newDragon}" th:action="@{/update/{id}(id=${newDragon.id})}" method=POST>
+Name: <input name="name"size="20" th:field="*{name}"> <br />
+Gender: <input name="gender" size="10" th:field="*{gender}"><br />
+Color: <input name="color" size="10" th:field="*{color}"><br />
+Morph: <input name="morph" size="10" th:field="*{morph}"><br />
+-----Retailer Information----- <br/>
+Name: <input name="retailer.retailName" size="20" th:field="*{retailer.retailName}"><br />
+Street: <input name="retailer.street" size="20" th:field="*{retailer.street}"><br />
+City: <input name="retailer.city" size="20" th:field="*{retailer.city}"><br />
+State:<input name="retailer.state" size="20" th:field="*{retailer.state}"><br />
+Phone:<input name="retailer.phone" size="20" th:field="*{retailer.phone}"><br />
+Email:<input name="retailer.email" size="20" th:field="*{retailer.email}"><br />
+<input name="submit" type="submit" value="submit"/>
+</form>
+<a href="viewAll">View all Dragons</a>
+</body>
+</html>
