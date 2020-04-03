@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View All Dragons</title>
+</head>
+<body>
+	<form>
+		<table>
+		<tr th:each="currentDragon : ${dragons}">
+			<td th:text="${currentDragon.id}"/>
+				<td th:text="${currentDragon.name}"/>
+				<td th:text="${currentDragon.gender}"/>
+				<td th:text="${currentDragon.color}"/>
+				<td th:text="${currentDragon.morph}"/>
+				<td th:text="${currentDragon.retailer.retailName}"/>
+				<td th:text="${currentDragon.retailer.street}"/>
+				<td th:text="${currentDragon.retailer.city}"/>
+				<td th:text="${currentDragon.retailer.state}"/>
+				<td th:text="${currentDragon.retailer.phone}"/>
+				<td th:text="${currentDragon.retailer.email}"/>
+				<td><a th:href="@{/edit/{id}(id=${currentDragon.id})}">Edit</a></td>
+				<td><a th:href="@{/delete/{id}(id=${currentDragon.id})}">Delete</a></td>
+			</tr>
+		</table>
+	</form>
+	<a href="../inputDragon">Add a new Dragon</a>
+</body>
+</html>
